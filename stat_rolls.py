@@ -61,15 +61,12 @@ if __name__ == "__main__":
         for i in range(2):
             roll_func()
             rig()
-            add = 0
         for i in range(2):
             roll_func()
             rig2()
-            add = 0
         for i in range(2):
             roll_func()
             rig3()
-            add = 0
 
         roll_again = input("Roll again? (y/n): ")
         if not roll_again.lower().startswith("y"):
