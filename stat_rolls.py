@@ -36,7 +36,7 @@ def rig2():
     print(f"\n{add}\n")
 
 def rig3():
-    while add < 6:
+    while add < 7:
         roll_func()
 
     print(f"{roll1}, {roll2}, {roll3}, {roll4}")
