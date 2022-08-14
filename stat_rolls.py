@@ -55,19 +55,17 @@ if __name__ == "__main__":
             if not roll_again.lower().startswith("y"):
                 quit()
     else:
-        pass
+        while True:
+            for i in range(2):
+                roll_func()
+                rig()
+            for i in range(2):
+                roll_func()
+                rig2()
+            for i in range(2):
+                roll_func()
+                rig3()
 
-    while True:
-        for i in range(2):
-            roll_func()
-            rig()
-        for i in range(2):
-            roll_func()
-            rig2()
-        for i in range(2):
-            roll_func()
-            rig3()
-
-        roll_again = input("Roll again? (y/n): ")
-        if not roll_again.lower().startswith("y"):
-            quit()
+            roll_again = input("Roll again? (y/n): ")
+            if not roll_again.lower().startswith("y"):
+                quit()
