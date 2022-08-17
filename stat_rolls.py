@@ -42,14 +42,27 @@ def rig3():
     print(f"{roll1}, {roll2}, {roll3}, {roll4}")
     print(f"\n{add}\n")
 
+def total_calc():
+    global total, final_total
+    final_total = 0
+    while final_total < dm_total:
+        total = []
+        for i in range(6):
+            roll_func()
+            print(f"{roll1}, {roll2}, {roll3}, {roll4}")
+            print(f"\n{add}\n")
+            total.append(add)
+
+        print("\n--------------------------------------------------------------\n")
+        final_total = total[0] + total[1] + total[2] + total[3] + total[4] + total[5]
+    print(f"Total: {final_total}")
+
 if __name__ == "__main__":
     question = input("Rig rolls? (y/n) ")
     if not question.lower().startswith("y"):
         while True:
-            for i in range(6):
-                roll_func()
-                print(f"{roll1}, {roll2}, {roll3}, {roll4}")
-                print(f"\n{add}\n")
+            dm_total = int(input("What is your total? "))
+            total_calc()
 
             roll_again = input("Roll again? (y/n): ")
             if not roll_again.lower().startswith("y"):
