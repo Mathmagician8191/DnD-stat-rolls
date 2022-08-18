@@ -38,7 +38,7 @@ def total_calc():
 
 if __name__ == "__main__":
     while True:
-        dm_total = int(input("What is your total? "))
+        dm_total = int(input("What is your DM's total? "))
         total_calc()
 
         roll_again = input("Roll again? (y/n): ")
