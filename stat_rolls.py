@@ -21,27 +21,6 @@ def roll_func():
     elif roll1 == roll2 and roll2 == roll3 and roll3 == roll4:
         add -= roll4
 
-def rig():
-    while add < 15:
-        roll_func()
-
-    print(f"{roll1}, {roll2}, {roll3}, {roll4}")
-    print(f"\n{add}\n")
-
-def rig2():
-    while add < 12:
-        roll_func()
-
-    print(f"{roll1}, {roll2}, {roll3}, {roll4}")
-    print(f"\n{add}\n")
-
-def rig3():
-    while add < 7:
-        roll_func()
-
-    print(f"{roll1}, {roll2}, {roll3}, {roll4}")
-    print(f"\n{add}\n")
-
 def total_calc():
     global total, final_total
     final_total = 0
@@ -58,27 +37,10 @@ def total_calc():
     print(f"Total: {final_total}")
 
 if __name__ == "__main__":
-    question = input("Rig rolls? (y/n) ")
-    if not question.lower().startswith("y"):
-        while True:
-            dm_total = int(input("What is your total? "))
-            total_calc()
+    while True:
+        dm_total = int(input("What is your total? "))
+        total_calc()
 
-            roll_again = input("Roll again? (y/n): ")
-            if not roll_again.lower().startswith("y"):
-                quit()
-    else:
-        while True:
-            for i in range(2):
-                roll_func()
-                rig()
-            for i in range(2):
-                roll_func()
-                rig2()
-            for i in range(2):
-                roll_func()
-                rig3()
-
-            roll_again = input("Roll again? (y/n): ")
-            if not roll_again.lower().startswith("y"):
-                quit()
+        roll_again = input("Roll again? (y/n): ")
+        if not roll_again.lower().startswith("y"):
+            quit()
