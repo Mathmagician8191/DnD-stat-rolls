@@ -6,18 +6,11 @@ def roll_func():
     roll3 = randint(1, 6)
     roll4 = randint(1, 6)
 
-    add = roll1 + roll2 + roll3 + roll4
+    l = (roll1, roll2, roll3, roll4)
 
-    if roll1 < roll2 or roll1 < roll3 or roll1 < roll4:
-        add -= roll1
-    elif roll2 < roll1 or roll2 < roll3 or roll2 < roll4:
-        add -= roll2
-    elif roll3 < roll1 or roll3 < roll2 or roll3 < roll4:
-        add -= roll3
-    elif roll4 < roll1 or roll4 < roll2 or roll4 < roll3:
-        add -= roll4
-    elif roll1 == roll2 and roll2 == roll3 and roll3 == roll4:
-        add -= roll4
+    X = l.index(min(l))
+
+    add = roll1 + roll2 + roll3 + roll4 - l[X]
 
     return add, roll1, roll2, roll3, roll4
 
