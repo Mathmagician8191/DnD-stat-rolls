@@ -1,8 +1,6 @@
 from random import randint
-from time import sleep
 
 def roll_func():
-    global add, roll1, roll2, roll3, roll4
     roll1 = randint(1, 6)
     roll2 = randint(1, 6)
     roll3 = randint(1, 6)
@@ -21,24 +19,32 @@ def roll_func():
     elif roll1 == roll2 and roll2 == roll3 and roll3 == roll4:
         add -= roll4
 
+    return add, roll1, roll2, roll3, roll4
+
 def total_calc():
-    global total, final_total
     final_total = 0
     while final_total < dm_total:
         total = []
         for i in range(6):
-            roll_func()
+            add, roll1, roll2, roll3, roll4 = roll_func()
             print(f"{roll1}, {roll2}, {roll3}, {roll4}")
             print(f"\n{add}\n")
             total.append(add)
 
-        print("\n--------------------------------------------------------------\n")
+        print("--------------------------------------------------------------\n")
         final_total = total[0] + total[1] + total[2] + total[3] + total[4] + total[5]
-    print(f"Total: {final_total}")
+        print(f"Total: {final_total}\n")
+        print("--------------------------------------------------------------\n")
 
 if __name__ == "__main__":
-    while True:
-        dm_total = int(input("What is your DM's total? "))
+    while True: # Loops entire program
+        while True: # Checks for valid input so you guys don't crash my program with a single letter
+            try:
+                dm_total = int(input("What is your DM's total? "))
+                break
+            except ValueError:
+                print("You have not entered a valid number, try again")
+
         total_calc()
 
         roll_again = input("Roll again? (y/n): ")
