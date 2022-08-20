@@ -8,10 +8,11 @@ while generating:
     hp_roll = randint(1,hit_die)
 
     max_hp = hit_die + con_mod
-    avg_hp = hit_die // 2 + con_mod + 1
+    avg_hp = hit_die // 2 + 1
 
     print(f"Max HP: {max_hp}")
-    print(f"Average HP: {avg_hp}")
+    print(f"Average HP (from hit dice max): {avg_hp}")
+    print(f"Average HP with constitution modifier: {avg_hp + con_mod}")
     print(f"Base HP roll: {hp_roll}")
     print(f"Roll with constitution modifier: {hp_roll + con_mod}")
 

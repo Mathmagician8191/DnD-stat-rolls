@@ -1,5 +1,4 @@
 from random import randint
-from time import perf_counter
 
 def total_calc():
     total = 0
@@ -13,9 +12,7 @@ def total_calc():
             total += subtotal
 
         bar = "-" * 62
-        print(f"\n{bar}\n")
-        print(f"Total: {total}")
-        print(f"\n{bar}\n")
+        print(f"\n{bar}\nTotal: {total}\n{bar}")
 
 if __name__ == "__main__":
     generating = True
@@ -29,5 +26,5 @@ if __name__ == "__main__":
 
         total_calc()
 
-        roll_again = input("Roll again? (y/n): ")
+        roll_again = input("\nRoll again? (y/n): ")
         generating = roll_again.lower().startswith("y")
