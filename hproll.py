@@ -1,18 +1,19 @@
 from random import randint
 
-while True:
+generating = True
+while generating:
     hit_die = int(input("What's your hit die? "))
-
     con_mod = int(input("What's your constitution modifier? "))
 
     hp_roll = randint(1,hit_die)
 
     max_hp = hit_die + con_mod
+    avg_hp = hit_die // 2 + con_mod + 1
 
     print(f"Max HP: {max_hp}")
+    print(f"Average HP: {avg_hp}")
     print(f"Base HP roll: {hp_roll}")
-    print("Roll with constitution modifier: " + str(hp_roll + con_mod))
+    print(f"Roll with constitution modifier: {hp_roll + con_mod}")
 
     roll_again = input("Roll again? (y/n) ")
-    if not roll_again.lower().startswith("y"):
-        quit()
+    generating = roll_again.lower().startswith("y")
